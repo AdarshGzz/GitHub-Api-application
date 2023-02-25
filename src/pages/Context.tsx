@@ -8,7 +8,8 @@ export const AppProvider = ({ children }) => {
     const [location, setLocation] = useState('location:angola');
     const [currentCountry, setCurrentCountry] = useState('angola');
     const [searchValue, setSearchValue] = useState('');
-    const [username, setUsername] = useState('null');
+    const [username, setUsername] = useState(null);
+    const [popup,setPopup] = useState(false)
 
     const GET_USER = gql`query ($first: Int!, $location: String!, $endCursor: String) {
     search(query: $location, type: USER, first: $first, after: $endCursor) {
@@ -62,7 +63,9 @@ export const AppProvider = ({ children }) => {
                 searchValue,
                 setSearchValue,
                 username,
-                setUsername
+                setUsername,
+                popup,
+                setPopup
             }}
         >
             {children}

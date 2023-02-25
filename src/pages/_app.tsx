@@ -13,10 +13,11 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
 
 
-const token = `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`
+const token = `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`
 const httpLink = createHttpLink({
   uri: 'https://api.github.com/graphql',
 });
+// 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
 
 const authLink = setContext((_, { headers }) => {
   return {

@@ -2,13 +2,16 @@ import Head from 'next/head'
 import Header from '../components/Header';
 import Loading from '../components/Loading';
 import UserList from '../components/UserList';
+import Repositories from '../components/Repositories';
+
 import { AppContext } from './Context';
 import { useContext } from 'react'; 
 
 
 
 export default function Home(): JSX.Element {
-  const { loading, data, fetchData } = useContext(AppContext);
+  const { loading, data, fetchData, popup } = useContext(AppContext);
+  
   return (
     <>
       <Head>
@@ -18,6 +21,7 @@ export default function Home(): JSX.Element {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
+        {popup===true ? <Repositories/> : null}
         <div className=" bg-[#02040a] text-white">
           <Header />
           {loading ? (
@@ -26,6 +30,7 @@ export default function Home(): JSX.Element {
             <UserList data={data} fetchData={fetchData} />
           )}
         </div>
+
       </main>
     </>
   )
