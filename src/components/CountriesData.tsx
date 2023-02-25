@@ -1,7 +1,10 @@
 import { useContext } from 'react';
 import { AppContext } from '../pages/Context';
+interface Props {
+  totalUsers: any;
+}
 
-const CountriesData = ({ totalUsers }) => {
+const CountriesData: React.FC<Props> = ({ totalUsers }) => {
   const date = new Date();
   const { data } = useContext(AppContext);
 

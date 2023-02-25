@@ -4,9 +4,27 @@ import { useContext, useState } from 'react';
 import { useQuery, gql } from '@apollo/client';
 
 
+type Repository = {
+    name: string;
+    url: string;
+};
+
+type User = {
+    avatarUrl: string;
+    bio: string;
+    email: string;
+    login: string;
+    name: string;
+    repositories: {
+        totalCount: number;
+        edges: {
+            node: Repository;
+        }[];
+    };
+};
 
 const Repositories = () => {
-    const { username, setUsername, setPopup } = useContext(AppContext);
+    const { username, setPopup } = useContext(AppContext);
 
     const GET_USER_DATA = gql`
             query($username:String!){
