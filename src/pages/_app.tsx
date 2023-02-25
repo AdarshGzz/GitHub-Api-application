@@ -4,6 +4,8 @@ import { setContext } from '@apollo/client/link/context';
 import { AppProvider } from './Context';
 import "../styles/globals.css"
 
+
+
 // import Font Awesome CSS
 import "@fortawesome/fontawesome-svg-core/styles.css";
 
@@ -13,11 +15,13 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
 
 
-const token = `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`
+const token = process.env.TOKEN_GIT  
+
+console.log(token)
 const httpLink = createHttpLink({
   uri: 'https://api.github.com/graphql',
 });
-// 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
+
 
 const authLink = setContext((_, { headers }) => {
   return {

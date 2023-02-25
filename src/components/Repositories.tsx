@@ -66,7 +66,11 @@ const Repositories = () => {
         url.push(`(${Data?.repositorys[i].node.url})`)
     }
 
-   
+//    const fu = data.repository.edges.map((rep,index)=>(
+//     console.log(rep)
+//    ))
+
+//    console.log(fu)
 
 
 
