@@ -3,11 +3,11 @@ import { useContext } from 'react';
 
 
 
-const User = (props) => {
+const User = (props:any) => {
   const { setUsername,setPopup } = useContext(AppContext);
   
 
-  const handleRepo=(val)=>{
+  const handleRepo=(val:any)=>{
     console.log(val)
     setUsername(val)
     setPopup(true)

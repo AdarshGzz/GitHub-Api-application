@@ -30,7 +30,6 @@ export default function Home(): JSX.Element {
             <UserList data={data} fetchData={fetchData} />
           )}
         </div>
-
       </main>
     </>
   )

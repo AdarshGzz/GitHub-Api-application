@@ -1,10 +1,10 @@
 import { createContext, useState } from 'react';
 import { useQuery, gql } from '@apollo/client';
 
-export const AppContext = createContext();
+export const AppContext = createContext(null);
 
-export const AppProvider = ({ children }) => {
-    const first = 50;
+export const AppProvider = ({ children }: { children: React.ReactNode }) => {
+  const [first, setFirst] = useState<number>(20);
     const [location, setLocation] = useState('location:angola');
     const [currentCountry, setCurrentCountry] = useState('angola');
     const [searchValue, setSearchValue] = useState('');
@@ -65,7 +65,9 @@ export const AppProvider = ({ children }) => {
                 username,
                 setUsername,
                 popup,
-                setPopup
+                setPopup,
+                first,
+                setFirst
             }}
         >
             {children}

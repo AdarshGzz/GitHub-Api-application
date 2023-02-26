@@ -15,8 +15,7 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
 
 
-const token = process.env.TOKEN_GIT || `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`
-
+const token = process.env.TOKEN_GIT
 
 const httpLink = createHttpLink({
   uri: 'https://api.github.com/graphql',

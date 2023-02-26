@@ -4,9 +4,13 @@ interface Props {
   totalUsers: any;
 }
 
+
 const CountriesData: React.FC<Props> = ({ totalUsers }) => {
   const date = new Date();
-  const { data } = useContext(AppContext);
+  
+  const {data} = useContext(AppContext) ;
+ 
+
 
   const title = ' font-bold text-xl p-2'
   const value = 'font-extrabold text-2xl '

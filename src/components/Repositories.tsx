@@ -4,24 +4,7 @@ import { useContext, useState } from 'react';
 import { useQuery, gql } from '@apollo/client';
 
 
-type Repository = {
-    name: string;
-    url: string;
-};
 
-type User = {
-    avatarUrl: string;
-    bio: string;
-    email: string;
-    login: string;
-    name: string;
-    repositories: {
-        totalCount: number;
-        edges: {
-            node: Repository;
-        }[];
-    };
-};
 
 const Repositories = () => {
     const { username, setPopup } = useContext(AppContext);
@@ -110,7 +93,7 @@ const Repositories = () => {
                         </div>
 
                     </div>
-                    <div onClick={() => setPopup(false)}>
+                    <div className='h-[30px] text-black bg-white w-[30px] rounded-[50%] flex justify-center items-center cursor-pointer ' onClick={() => setPopup(false)}>
                         X
                     </div>
                 </div>
