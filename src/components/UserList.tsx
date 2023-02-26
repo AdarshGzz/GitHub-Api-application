@@ -30,7 +30,7 @@ const UserList: React.FC<UserListProps> = ({ data, fetchData }) => {
       }
     }
   }
-    console.log(data.search.edges.length)
+
 
   return (
     <InfiniteScroll
